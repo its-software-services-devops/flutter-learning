@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'main_button.dart';
+import 'test_listview.dart';
 
 class AppMainPage extends StatefulWidget {
   final String title;
@@ -75,18 +76,12 @@ class _AppMainPageState extends State<AppMainPage> {
       body: Center(
         child: Row(
           children: [
+            const Expanded(
+              flex: 1,
+              child: TestListview()
+            ),
             _buildLeftColumn(1),
             _buildLeftColumn(2),
-            Expanded(
-              flex: 1,
-              child: Container(
-                margin: const EdgeInsets.all(10),
-                width: 100,
-                height: 400,
-                color: Colors.amber,
-                child: const Text("DUMMY"),
-              )
-            )
             ]
           )
       )
