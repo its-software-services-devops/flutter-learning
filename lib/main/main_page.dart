@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'main_button.dart';
 import 'test_listview.dart';
+import 'test_avata.dart';
+import 'test_card.dart';
 
 class AppMainPage extends StatefulWidget {
   final String title;
@@ -19,11 +21,8 @@ class _AppMainPageState extends State<AppMainPage> {
       flex: flex,
       child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Padding(
-              padding: EdgeInsets.only(top: 50),
-            ),
-
             Padding(
               padding: const EdgeInsets.all(10),
               child: MainButton(
@@ -75,12 +74,19 @@ class _AppMainPageState extends State<AppMainPage> {
       ),
       body: Center(
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const Expanded(
+            Expanded(
               flex: 1,
-              child: TestListview()
-            ),
-            _buildLeftColumn(1),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [ 
+                    TestAvata(),
+                    TestCard()
+                  ])),
+            const Expanded(
+              flex: 2,
+              child: TestListview()),
             _buildLeftColumn(2),
             ]
           )

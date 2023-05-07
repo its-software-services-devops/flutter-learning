@@ -9,12 +9,9 @@ class TestListview extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
+        _testTile('Seubpong Monsar', '85 W Portal Ave', Icons.theaters),
+        _testTile('Prakaporn Monsarrrrr', '85 W Portal Ave', Icons.theaters),
         _tile('The Castro Theater', '429 Castro St', Icons.theaters),
-        _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
-        _tile('Roxie Theater', '3117 16th St', Icons.theaters),
-        _tile('United Artists Stonestown Twin', '501 Buckingham Way',
-            Icons.theaters),
         _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
         const Divider(),
         _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
@@ -29,15 +26,37 @@ class TestListview extends StatelessWidget {
 
 ListTile _tile(String title, String subtitle, IconData icon) {
   return ListTile(
-    title: Text(title,
-        style: const TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 20,
-        )),
-    subtitle: Text(subtitle),
-    leading: Icon(
-      icon,
-      color: Colors.purple[500],
-    ),
-  );
+        title: Text(title,
+            style: const TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 20,
+            )),
+        subtitle: Text(subtitle),
+        leading: Icon(
+          icon,
+          color: Colors.purple[500],
+        ),
+      );
+}
+
+Padding _testTile(String title, String subtitle, IconData icon) {
+  return Padding(
+    padding: const EdgeInsets.only(left: 15),
+    child: Row(
+      children: [ 
+        Icon(icon, color: Colors.purple[500],),
+        Padding(
+          padding: const EdgeInsets.only(left: 30),
+          child: Text(title,
+            style: const TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 16,
+            ))),
+        IconButton(
+          iconSize: 14,
+          icon: Icon(Icons.edit, color: Colors.blue[500],),
+          onPressed: () {},
+          )
+      ],
+    ));
 }
