@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
-import 'main_button.dart';
 import 'test_listview.dart';
 import 'test_avata.dart';
 import 'test_card.dart';
+import 'test_data_table.dart';
 
 class AppMainPage extends StatefulWidget {
   final String title;
@@ -54,6 +53,11 @@ class _AppMainPageState extends State<AppMainPage> {
     if (index == 0)
     {
       return(_buildHome());   
+    }
+
+    if (index == 1)
+    {
+      return(const TestDataTable());   
     }
 
     return(_widgetOptions.elementAt(index));
